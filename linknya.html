@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Our App</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+            position: relative;
+        }
+        .header h1::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #008CBA;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            width: 100%;
+        }
+        .card {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .slider {
+            display: flex;
+            overflow: hidden;
+        }
+        .slider img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .slider-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .card p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.05);
+        }
+        .register-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .service-button {
+            background-color: #008CBA;
+            color: white;
+        }
+        .email-form {
+            display: none;
+            margin-top: 20px;
+        }
+        .email-input {
+            padding: 10px;
+            font-size: 14px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-button:hover {
+            background-color: #d32f2f;
+        }
+        .image {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Get Our App</h1>
+            <p>Join Our Community Today</p>
+        </div>
+        <div class="card-container">
+            <div class="card" id="konsumenCard">
+                <img src="logo_apk1.png" alt="Consumer App Logo">
+                <div class="slider-container">
+                    <div class="slider" id="konsumenSlider">
+                        <img src="page2.png" alt="Image 1">
+                        <img src="page1.png" alt="Image 2">
+                        <img src="page3.png" alt="Image 3">
+                        <img src="page4.png" alt="Image 4">
+                    </div>
+                    <div class="slider-buttons">
+                        <button class="slider-button" onclick="prevSlide('konsumenSlider')">&#10094;</button>
+                        <button class="slider-button" onclick="nextSlide('konsumenSlider')">&#10095;</button>
+                    </div>
+                </div>
+                <p>Hello, Valued Consumer!</p>
+                <button class="button register-button" onclick="showForm('konsumen')">Sign Up for Consumer App</button>
+                <form class="email-form konsumen-email-form" action="save_email.php" method="POST">
+                    <input type="hidden" name="type" value="konsumen">
+                    <input type="email" class="email-input" name="email" id="konsumenEmail" placeholder="Enter your email" list="konsumenEmailList" autocomplete="email" required>
+                    <datalist id="konsumenEmailList">
+                    </datalist>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+            <div class="card" id="jasaCard">
+                <img src="logo_apk22.png" alt="Service App Logo">
+                <div class="slider-container">
+                    <div class="slider" id="jasaSlider">
+                        <img src="jasa1.png" alt="Image 1">
+                        <img src="jasa2.png" alt="Image 2">
+                        <img src="jasa3.png" alt="Image 3">
+                        <img src="jasa4.png" alt="Image 4">
+                    </div>
+                    <div class="slider-buttons">
+                        <button class="slider-button" onclick="prevSlide('jasaSlider')">&#10094;</button>
+                        <button class="slider-button" onclick="nextSlide('jasaSlider')">&#10095;</button>
+                    </div>
+                </div>
+                <p>Discover Our Service App Features</p>
+                <button class="button service-button" onclick="showForm('jasa')">Sign Up for Service App</button>
+                <form class="email-form jasa-email-form" action="save_email.php" method="POST">
+                    <input type="hidden" name="type" value="jasa">
+                    <input type="email" class="email-input" name="email" id="jasaEmail" placeholder="Enter your email" list="jasaEmailList" autocomplete="email" required>
+                    <datalist id="jasaEmailList">
+                    </datalist>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(type) {
+            if (type === 'konsumen') {
+                document.getElementById('konsumenCard').appendChild(document.querySelector('.konsumen-email-form'));
+                document.querySelector('.konsumen-email-form').style.display = 'block';
+            } else if (type === 'jasa') {
+                document.getElementById('jasaCard').appendChild(document.querySelector('.jasa-email-form'));
+                document.querySelector('.jasa-email-form').style.display = 'block';
+            }
+        }
+
+        function prevSlide(sliderId) {
+            const slider = document.getElementById(sliderId);
+            slider.scrollBy({
+                left: -slider.clientWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        function nextSlide(sliderId) {
+            const slider = document.getElementById(sliderId);
+            slider.scrollBy({
+                left: slider.clientWidth,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

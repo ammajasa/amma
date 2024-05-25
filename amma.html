@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMMA "SAVE YOUR TIME"</title>
+  <style>
+    body {
+      background-color: white;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .border-atas {
+      width: 100%;
+      height: 60px;
+      background-color: rgb(255, 246, 246);
+      display: flex; 
+      align-items: center; 
+      padding: 10px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+    .border-atas img {
+      width: 200px;
+      height: 100px;
+      margin-right: auto; 
+      box-sizing: border-box;
+    }
+    .border-atas a:first-child {
+      margin-left: 0;
+      margin-right: 0;
+      box-sizing: border-box;
+    }
+    .border-atas a {
+      text-decoration: none;
+      color: #14252f;
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      box-sizing: border-box;
+      margin: 0 10px;
+    }
+    .border-atas a:hover {
+      background-color: rgb(255, 238, 238);
+    }
+    .menu {
+      float: left; 
+      width: 100%;
+      height: 100px; 
+      padding: 0; 
+      margin-top: 40px; 
+      margin-bottom: 400px;
+      box-sizing: border-box;
+    }
+    .menu2 {
+      float: left; 
+      width: 100%;
+      height: 10px; 
+      padding: 0; 
+      margin-top: 40px;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+    }
+    .menu h2 {
+      margin-bottom: 30px; 
+      box-sizing: border-box;
+    }
+    .menu2 h2 {
+      margin-bottom: 20px; 
+      box-sizing: border-box;
+    }
+    .menu2 section#tntg {
+      background-color: #fcf8f7; 
+      padding: 80px; 
+      color: #d52c25; 
+      box-sizing: border-box;
+    }
+    .menu section#tntg {
+      padding: 80px; 
+      color: rgb(255, 253, 253); 
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23d52c25" fill-opacity="1" d="M0,320L80,293.3C160,267,320,213,480,213.3C640,213,800,267,960,277.3C1120,288,1280,256,1360,240L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>') repeat-x;
+      background-size: 170%;
+      background-clip: 60px;
+      padding-bottom: 200px;
+      box-sizing: border-box;
+    }
+    .menu section#tntg p {
+      text-align: justify; 
+      width: 100%;
+      color: rgb(58, 57, 55);
+      text-size-adjust: auto;
+    }
+    .menu2 section#tntg p {
+      text-align: justify;
+      width: 100%; 
+    }
+    .about-image {
+      width: 600px; 
+      height: auto; 
+      float: right; 
+      margin-left: 10px; 
+      margin-top: 10px;
+      margin-bottom: 70px;
+      scroll-margin-bottom: 10px; 
+    }
+    .fitur-amma1 {
+      display: flex;
+      float: left;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff;
+      text-align: center; 
+      margin: 20px; 
+      padding: 10px;
+    }
+    .fitur-amma1:hover {
+      transform: scale(1.05); 
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .polisi-image {
+      width: 70px; 
+      height: auto;
+      border-bottom: 1px solid #ccc;
+    }
+    .card-content {
+      padding: 2px;
+      height: 5s0px;
+      margin-bottom: 50px;
+    }
+    .card-content h1 {
+      font-size: 0.8em;
+      margin: 0;
+      margin-bottom: 5px;
+      text-align: center;
+      margin-top: 5px;
+    }
+    .card-text {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+    }
+    .card-text p {
+      text-align: center; 
+      margin: 0;
+      font-size: 1em;
+    }
+
+    .wave-line {
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      border-radius: 2px;
+    }
+    .utama-image {
+      width: 400px; 
+      height: auto; 
+      float: left; 
+      margin-right: 50px; 
+      margin-top: 0;
+      margin-bottom: 10px;
+      scroll-margin-bottom: 10px; 
+    }
+    .menu h1 {
+      font-size: 2em;
+      color: black;
+      font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+    }
+    .fitur-amma {
+      display: flex;
+      align-items: center;
+    }
+    .fitur-amma h1 {
+      color: black;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+      width: 100%;
+    }
+    .fitur-amma1 h1 {
+      color: black;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+      width: 100%;
+    }
+    .fitur-amma p {
+      color: #ddd;
+      text-align: justify;
+      width: 200px; 
+      height: auto; 
+      padding: 10px; 
+      background-color: #d52c25;
+      background-size: cover; 
+      transition: all 0.3s ease-in-out; 
+    }
+    .fitur-amma p:hover {
+      color: #fff; 
+      background-color: #a3201b; 
+      transform: scale(1.10); 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: justify;
+    }
+    .fitur-amma1 p {
+      text-align: center; 
+      width: 100px;
+      height: 60px;
+      text-align: justify;
+    }
+    .wave-line {
+      position: relative;
+      height: 20px;
+      margin: 5px;
+      width: 5px;
+    }
+    .wave-line::before {
+      content: '';
+      position: relative;
+      width: 50%;
+      height: auto;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28"><path fill="red" d="M0 10.5c20 10 40 0 60 0s40 10 60 0v7.5h-120v-7.5z" /></svg>');
+      background-repeat: repeat-x;
+      background-size: 30px 15px;
+    }
+    .team-section {
+      padding: 80px;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    .team-section h2 {
+      margin-bottom: 40px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+      color: #333;
+    }
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-member {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 250px;
+      margin: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+    .team-member:hover {
+      border-color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: translateY(-5px); 
+    }
+    .team-member img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .team-member:hover img {
+      transform: scale(1.1); 
+    }
+    .team-member h3 {
+      margin-bottom: 10px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #333;
+      transition: color 0.3s ease-in-out;
+    }
+    .team-member:hover h3 {
+      color: #000; 
+    }
+    .team-member p {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #666;
+      transition: color 0.3s ease-in-out;
+    }
+    .team-member:hover p {
+      color: #444; 
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 2px;
+      font-size: 20px;
+    }
+    .download1 {
+            background-color: #0f1d2a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        padding: 0;
+    }
+
+    .download1 {
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeIn 1s ease;
+    }
+
+    .download1 h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .download1 h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }
+
+    .section {
+        margin: 0 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 200px;
+        margin: 10px;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.2em;
+        background-color: #d52c25;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: transparent;
+        color: #d52c25;
+        border-color: #d52c25;
+    }
+
+    .social-media {
+        margin-top: 20px;
+    }
+    .social-icon img {
+      width: 70px; 
+      height: 70px;
+    }
+
+    .social-icon {
+        color: #fff;
+        font-size: 2em;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s;
+        width: 20px;
+        height: auto;
+    }
+
+    .social-icon:hover {
+        color: #d52c25;
+        width: 20px;
+        height: auto;
+    }
+    .downlaod1 a{
+      width: 20px;
+      height: auto;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+    }
+    .pembantu-image{
+      width: 110px;
+      height: auto;
+    }
+    .ef-image{
+      width: 110px;
+      height: auto;
+    }
+    .duit-image{
+      width: 110px;
+      height: auto;
+    }
+    .menu3 p{
+      font-size: 15px;
+    }
+    @media screen and (max-width: 956px){
+      body {
+  background-color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .border-atas {
+    height: 80px;
+    padding: 10px;
+    position: -webkit-sticky;
+  }
+
+  .border-atas img {
+    width: 150px;
+    height: 75px;
+  }
+
+  .border-atas a {
+    padding: 2px;
+    font-size: 10px;
+  }
+
+  .menu {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+  }
+  .menu h1 {
+      font-size: 0.5em;
+      color: black;
+      font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+    }
+
+  .menu h2 {
+    margin-bottom: 10px;
+  }
+
+  .menu2 {
+    margin-top: 20px;
+  }
+
+  .menu2 h2 {
+    margin-bottom: 10px;
+  }
+
+  .menu2 section#tntg {
+    padding: 40px;
+  }
+
+  .menu section#tntg {
+      display: block;
+      padding: 70px; 
+      color: rgb(255, 253, 253); 
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23d52c25" fill-opacity="1" d="M0,320L80,293.3C160,267,320,213,480,213.3C640,213,800,267,960,277.3C1120,288,1280,256,1360,240L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>') repeat-x;
+      background-size: 200%;
+      background-clip: 40px;
+      box-sizing: border-box;
+      position: relative;
+      top: 40px;
+      justify-content: left;
+      flex-direction: column;
+    }
+    .menu section#tntg p{
+      position: relative;
+      font-size: 5px;
+      bottom: 30px;
+      right: 60px;
+      text-size-adjust: auto;
+      padding-right: 20px;
+    }
+    .menu section#tntg h1{
+      position: relative;
+      bottom: 30px;
+      right: 60px;
+    }
+    .menu section#tntg img{
+      position: relative;
+      width: 120px;
+      display: inline;
+    }
+
+  .menu2 section#tntg p {
+    font-size: 6px;
+    position: relative;
+  }
+  .utama-image {
+      width: 50%; 
+      height: auto; 
+      float: left; 
+      margin-right: 50px; 
+      margin-top: 0;
+      margin-bottom: 10px;
+      scroll-margin-bottom: 10px;
+      position: relative;
+      bottom: 30px;
+      top: 20px; 
+    }
+
+  .about-image {
+    width: 150px;
+    height: auto;
+    position:relative;
+    bottom: 40px;
+    left: 40px;
+    
+  }
+
+  .fitur-amma1 {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+
+  .fitur-amma1 h1 {
+    font-size: 30px;
+  }
+  .fitur-amma1 p{
+    font-size: 20px;
+    text-align: left;
+  }
+  .menu3 p{
+      font-size: 20px;
+    }
+  .polisi-image {
+    width: 50px;
+    height: auto;
+  }
+
+  .card-content {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  .card-content h1 {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 30px;
+  }
+
+  .wave-line {
+    height: 5px;
+  }
+
+  .menu h1 {
+    font-size: 10px;
+    margin-top: 0px;
+    text-align: justify;
+  }
+  .fitur-amma{
+    justify-content: center;
+  }
+
+  .fitur-amma h1 {
+    font-size: 15px;
+  }
+
+  .fitur-amma p {
+    font-size: 50%;
+    text-align: justify;
+  }
+
+  .team-section {
+    padding: 40px;
+  }
+
+  .team-member {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .team-member img {
+    width: 100px;
+    height: auto;
+  }
+
+  .team-member h3 {
+    font-size: 18px;
+  }
+
+  .team-member p {
+    font-size: 14px;
+  }
+
+  .card-container {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .card-container p {
+    font-size: 20px;
+  }
+
+  .download1 {
+    padding: 30px;
+  }
+
+  .download1 h1 {
+    font-size: 24px;
+  }
+
+  .download1 h2 {
+    font-size: 18px;
+  }
+
+  .buttons {
+    flex-direction: column
+    }
+    .social-icon img {
+      width: 30px; 
+      height: auto;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="border-atas">
+    <img src="logo.png" alt="AMMA Logo">
+    <a href="#tntg">Tentang Aplikasi</a>
+    <a href="#tim">TIM</a>
+    <a href="#down">Download</a>
+  </div>
+
+  <div class="menu">
+    <section id="tntg">
+      <img src="samping1.png" alt="samping1" class="about-image">
+      <h1>AMMA<br>SAVE YOUR TIME</h1>
+      <p>AMMA adalah aplikasi penghubung penyedia jasa dengan konsumen<br>bebasis daring.Tak 
+        hanya menyediakan jasa transportasi online<br>dan jasa pengantar makanan seperti aplikasi
+        yang telah beredar sebelumnya,<br>AMMA menyediakan  berbagai penyedia jasa dalam berbagai bidang <br>keterampilan untuk membantu berbagai kebutuhan konsumen</p> 
+      <div class="wave-line"></div>
+    </section>
+  </div>
+
+  <div class="menu2">
+    <section id="tntg">
+      <div class="fitur-amma">
+        <img src="mockup1.png" alt="utama logo1" class="utama-image">
+        <div>
+          <h1>LAYANAN APLIKASI JASA TERLENGKAP</h1>
+          <p>1. Klasifikasi layanan yang luas, seperti asisten rumah tangga dan teknisi 
+          barang rumahan.<br><br>
+          2. Pemesanan yang bisa disesuaikan dengan kebutuhan dan permasalahan 
+          pribadi.<br><br>
+          3. Jaminan penyedia jasa yang terhubung dengan badan terpercaya. Melalui 
+          verifikasi kredensial, badan terpercaya dapat menilai kesesuaian penyedia 
+          layanan yang memenuhi kriteria kelayakan yang telah tim tentukan untuk 
+          kesehjateraan bersama.<br><br>
+          4. Layanan Pelanggan 24/7.</p>
+          <div class="wave-line"></div>
+        </div>
+      </div>
+    </section>
+    <div class="menu3">
+      <section id="tntg">
+        <div class="card-container">
+          <div class="fitur-amma1">
+            <img src="polisi.png" alt="utama logo1" class="polisi-image">
+            <div class="card-content">
+              <h1>AMAN DAN TERPERCAYA</h1>
+              <p style="font-size: 15px;">Verivikasi Lengkap Data Diri Penyedia Jasa Sesuai Hukum </>
+              <div class="wave-line"></div>
+            </div>
+          </div>
+
+          <div class="fitur-amma1">
+            <img src="pembantu.png" alt="utama logo1" class="pembantu-image">
+            <div class="card-content">
+              <h1>MITRA TERBAIK</h1>
+              <p style="font-size: 15px"> Bekerjasama dengan BLK Resmi dan Berbadan Hukum</p>
+              <div class="wave-line"></div>
+            </div>
+          </div>
+
+          <div class="fitur-amma1">
+            <img src="efesien (2).png" alt="utama logo1" class="ef-image">
+            <div class="card-content">
+              <h1>PEMESANAN EFESIEN</h1>
+              <p style="font-size: 15px">Jaringan Penyedia Jasa luas Dengan Layanan 24/7</p>
+              <div class="wave-line"></div>
+            </div>
+          </div>
+          <div class="fitur-amma1">
+            <img src="duit.png" alt="utama logo1" class="duit-image">
+            <div class="card-content">
+              <h1>HARGA KOMPETITIF</h1>
+              <p style="font-size: 15px">Konsumen Mendapat Penyedia jasa Dengan Harga Yang Diinginkan</p>
+              <div class="wave-line"></div>
+            </div>
+          </div>
+      </section>
+
+      <section id="tim" class="team-section">
+        <h1>Founder</h1>
+        <div class="team-container">
+            <div class="team-member">
+              <img src="ivan2.png" alt="Member-4">
+              <h3>HARRY</h3>
+              <p> Software Engineer</p>
+              <p> Magelang,Indonesia</p>
+            </div>
+        </div>
+      </section>
+
+      <section id="tim" class="team-section">
+        <h2>TIM KAMI</h2>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="adnan.png" alt="Member 1">
+            <h3>ADNAN DWI KURNIAWAN</h3>
+            <p>Software Designer</p>
+            <p> Magelang,Indonesia</p>
+          </div>
+          <div class="team-member">
+            <img src="febri.png" alt="Member 2">
+            <h3>FEBRIANI DEWI ALVIAH</h3>
+            <p>CEO and Marketing</p>
+            <p> Pati,Indonesia</p>
+          </div>
+          <div class="team-member">
+            <img src="ferdi.png" alt="Member 3">
+            <h3>FERDI MAULANA IKHSAN</h3>
+            <p>Software Engineer</p>
+            <p> Magelang,Indonesia</p>
+          </div>
+        </div>
+      </section>
+
+    <div class="download"></div>
+      <section id="down">
+        <div class="download1">
+          <h1>Bergabung Bersama Kami</h1>
+          <div class="buttons">
+              <div class="section">
+                  <h2>Bagi Para Konsumen</h2>
+                  <a href="linknya.html" class="btn">Download</a>
+              </div>
+              <div class="section">
+                  <h2>Bagi Mitra Kami</h2>
+                  <a href="linknya.html" class="btn">Download</a>
+              </div>
+          </div>
+          <div class="social-media">
+              <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i> 
+                <img src="face.png" alt="facebook"></a>
+              <a href="https://www.instagram.com/amma.jasa?igsh=ZnV5NmlhdG95YzE4" class="social-icon"><i class="fab fa-twitter"></i>
+                <img src="insta.png" alt="instagram"></a>
+              <a href=https://www.youtube.com/@AMMAJASA class="social-icon"><i class="fab fa-instagram"></i>
+                <img src="yt.png" alt="youtube"></a>
+              <a href="https://wa.me/+6283841427656" class="social-icon"><i class="fab fa-linkedin-in"></i>
+                <img src="was.png" alt="whatsapp"></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <main>
+    <header>
+      <nav>
+      </nav>
+    </header>
+  </main>
+</body>
+</html>
